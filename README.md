@@ -1,5 +1,6 @@
 # 1D1A
-하루 최소 1개 이상의 알고리즘 문제를 풀며 기록합니다.  
+[하루 최소 1개 이상의 알고리즘 문제를 풀며 기록](https://miniature-silica-fec.notion.site/1-1-1759506a1627803ba1a2fc5bf5391fb1) 합니다.
+
 |사용언어|
 |--|
 |![c++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)|  
