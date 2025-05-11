@@ -2,19 +2,6 @@
 #include <stack>
 using namespace std;
 
-void sol(string str);
-
-int main(void) {
-    ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
-
-    int tc; cin >> tc;
-
-    for (int i = 0; i < tc; i++) {
-        string str; cin >> str;     // 괄호 문자열
-        sol(str);
-    }
-}
-
 void sol(string str) {
     stack<char> s;
     for (int i = 0; i < str.size(); i++) {
@@ -35,4 +22,15 @@ void sol(string str) {
         cout << "YES" << '\n';
     else 
         cout << "NO" << '\n';
+}
+
+int main(void) {
+    ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+
+    int tc; cin >> tc;
+
+    for (int i = 0; i < tc; i++) {
+        string str; cin >> str;     // 괄호 문자열
+        sol(str);
+    }
 }
