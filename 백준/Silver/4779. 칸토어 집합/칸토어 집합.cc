@@ -1,27 +1,33 @@
 #include <iostream>
 #include <cmath>
+#include <string>
 using namespace std;
 
-void sol(int n) {
-    if (n == 0) {
-        cout << "-";
-        return;
-    } 
+// 재귀적으로 가운데 공백을 만드는 함수
+void makeCantor(string &s, int start, int end) {
+    if (end - start < 3) return;
 
-    sol(n-1);
-    for (int i = 0; i < pow(3, n-1); i++) {
-        cout << " ";
+    int third = (end - start) / 3;
+
+    // 가운데 구간을 공백으로 설정
+    for (int i = start + third; i < start + 2 * third; i++) {
+        s[i] = ' ';
     }
-    sol(n-1);
+
+    // 좌, 우 구간에 대해 재귀 호출
+    makeCantor(s, start, start + third);
+    makeCantor(s, start + 2 * third, end);
 }
 
-int main(void) {
-    ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
-
+int main() {
     int n;
     while (cin >> n) {
-        sol(n);
-        cout << "\n";
+        int len = pow(3, n);      // 총 길이
+        string result(len, '-');  // 전부 '-'로 초기화
+
+        makeCantor(result, 0, len);  // 가운데 공백을 넣기 위한 재귀
+
+        cout << result << '\n';   // 최종 문자열 출력
     }
     return 0;
 }
