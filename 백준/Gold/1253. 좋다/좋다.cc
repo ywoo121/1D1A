@@ -1,44 +1,51 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
+#include <vector>
 using namespace std;
 
 int main(void) {
-    ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+    ios::sync_with_stdio(false);
+    cin.tie(0);
 
-    int n; cin >> n;    // 수의 개수
-    vector<int> v;
+    int N;
+    cin >> N;
 
-    for (int i = 0; i < n; i++) {
-        int a; cin >> a;
-        v.push_back(a);
+    vector<long long> v(N);
+    for (int i = 0; i < N; i++) {
+        cin >> v[i];
     }
 
     sort(v.begin(), v.end());
 
-    int cnt = 0;
+    int ans = 0;
 
-    for (int k = 0; k < n; k++) {
-        int find = v[k];
-        int i = 0;
-        int j = n-1;
+    for (int i = 0; i < N; i++) {
+        long long K = v[i];
+        int start = 0;
+        int end = N - 1;
 
-        while (i < j) {
-            if (v[i] + v[j] == find) {
-                if (i != k && j != k) {
-                    cnt++;
-                    break;
-                } else if (i == k) {
-                    i++;
-                } else if (j == k) {
-                    j--;
-                }
-            } else if (v[i] + v[j] < find) {
-                i++;
-            } else if (v[i] + v[j] > find) {
-                j--;
+        while (start < end) {
+            if (start == i) {
+                start++;
+                continue;
+            }
+            if (end == i) {
+                end--;
+                continue;
+            }
+
+            long long sum = v[start] + v[end];
+
+            if (sum == K) {
+                ans++;
+                break;
+            } else if (sum < K) {
+                start++;
+            } else {
+                end--;
             }
         }
     }
-    cout << cnt ;
+
+    cout << ans;
 }
