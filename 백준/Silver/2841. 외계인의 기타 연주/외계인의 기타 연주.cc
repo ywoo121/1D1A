@@ -1,6 +1,4 @@
-#include <iostream>
-#include <stack>
-#include <vector>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main(void) {
@@ -29,7 +27,7 @@ int main(void) {
             continue;
         }
 
-        // 들어온 fret 누그리
+        // 들어온 fret
         guitar[line].push(fret);
         cnt++;
     }
