@@ -1,5 +1,6 @@
-#include <iostream>
-#include <regex>
+//  염색체
+
+#include<bits/stdc++.h>
 using namespace std;
 
 bool isInfected(string chro) {
@@ -10,7 +11,7 @@ bool isInfected(string chro) {
 int main(void) {
     ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 
-    int T; cin >> T;    //테스트 케이스 개수
+    int T; cin >> T;    
 
     while (T--) {
         string chro; cin >> chro;
