@@ -1,5 +1,7 @@
-#include <iostream>
-#include <stack>
+//  후위_표기식_2
+
+#include<bits/stdc++.h>
+
 using namespace std;
 
 int main(void) {
