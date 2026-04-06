@@ -1,5 +1,7 @@
-#include <iostream>
-#include <deque>
+//  회전하는 큐
+
+#include<bits/stdc++.h>
+
 using namespace std;
 
 int main(void) {
@@ -49,3 +51,4 @@ int main(void) {
 
     cout << ans;
 }
+
