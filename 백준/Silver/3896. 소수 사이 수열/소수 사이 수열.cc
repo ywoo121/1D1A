@@ -1,5 +1,6 @@
-#include <iostream>
-#include <cmath>
+//  소수 사이 수열
+
+#include<bits/stdc++.h>
 using namespace std;
 
 // 특정 수가 소수인지 판별
