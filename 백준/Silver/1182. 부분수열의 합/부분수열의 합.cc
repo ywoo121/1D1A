@@ -1,25 +1,28 @@
-#include <iostream>
-#include <vector>
+//  부분수열의 합
+
+#include<bits/stdc++.h>
+
 using namespace std;
 
-int n, s; 
-vector<int> v(20);
+int n, s;vector<int> v(20);
 int cnt = 0;
 
 void solve(int idx, int sum) {
     sum += v[idx];
 
     if (sum == s) {
-        cnt ++;
+        cnt++;
     }
 
     for (int i = idx + 1; i < n; i++) {
-        solve(i, sum); 
+        solve(i, sum);
     }
 }
 
 int main(void) {
-    ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
 
     cin >> n >> s;
     for (int i = 0; i < n; i++) {
@@ -29,7 +32,6 @@ int main(void) {
     for (int i = 0; i < n; i++) {
         solve(i, 0);
     }
-    
-    cout << cnt;
 
+    cout << cnt;
 }
