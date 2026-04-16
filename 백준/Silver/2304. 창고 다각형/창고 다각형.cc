@@ -1,13 +1,20 @@
-#include <iostream>
-#include <algorithm>
+//  창고 다각형
+
+#include<bits/stdc++.h>
 #define MAX 1001
+
 using namespace std;
 
+int block[MAX] = {0}; // 기둥
+int roof[MAX] = {0}; // 지붕
+
 int main() {
-    int n; cin >> n;
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
     
-    int block[MAX] = {0}; // 기둥 
-    int roof[MAX] = {0};   // 지붕
+    int n;
+    cin >> n;
 
     int start = MAX, end = 0;
 
